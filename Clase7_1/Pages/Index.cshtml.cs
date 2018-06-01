@@ -11,18 +11,22 @@ namespace Clase7_1.Pages
     {
 
         public double? resultado;
-
+       
         public void OnGet(double numero1,string operacion, double numero2)
         {
            
             if (numero1 != 0 || numero2 != 0)
             {
+                
                 switch (operacion)
                 {
                     case "suma": resultado=(numero1 + numero2); break;
                     case "resta": resultado=(numero1 - numero2); break;
                     case "multi": resultado=(numero1 * numero1); break;
                     case "divi": resultado=(numero1 / numero2); break;
+                    case "pote": resultado =Math.Pow(numero1,numero2); break;
+                    case "expo":resultado = Math.Exp(numero1);break;
+                    case "radi": resultado = Math.Sqrt(numero1); break;
                 }
             }
 
@@ -34,7 +38,7 @@ namespace Clase7_1.Pages
             var n1 =Request.Form["numero1"];
             var n2 =Request.Form["numero2"];
             var opc = Request.Form["operacion"];
-            //Redirecciona Al GET con los parametros que enviamos
+                       //Redirecciona Al GET con los parametros que enviamos
             return Redirect("Index?numero1=" + n1 +"&operacion="+ opc +"&numero2=" + n2);
 
         }
