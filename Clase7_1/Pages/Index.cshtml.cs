@@ -34,7 +34,7 @@ namespace Clase7_1.Pages
                             resultado = numero1 / numero2;
                         }
                         else
-                        {   msnerror = "ERROR AL DIVIDIR POR CERO";
+                        {   msnerror = "NO SE PUEDE DIVIDIR POR CERO";
                             resultado = null;
                         };break;
                         case "pote": resultado = Math.Pow(numero1, numero2); break;
