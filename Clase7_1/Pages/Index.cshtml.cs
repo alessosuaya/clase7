@@ -32,11 +32,9 @@ namespace Clase7_1.Pages
                         if (numero2 != 0)
                         {
                             resultado = numero1 / numero2;
-
                         }
                         else
-                        {
-                            msnerror = "ERROR AL DIVIDIR POR CERO";
+                        {   msnerror = "ERROR AL DIVIDIR POR CERO";
                             resultado = null;
                         };break;
                         case "pote": resultado = Math.Pow(numero1, numero2); break;
