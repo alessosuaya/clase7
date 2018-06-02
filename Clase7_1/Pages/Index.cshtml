@@ -51,11 +51,13 @@
     <div class="form-group">
         <div class="col-sm-4">
             <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-send "></span> OBTENER RESULTADO</button>
-            <button type="reset" class="btn btn-danger"><span class="
-glyphicon glyphicon-erase"></span> LIMPIAR</button>
+            <button type="reset" class="btn btn-danger">
+                <span class="
+glyphicon glyphicon-erase"></span> LIMPIAR
+            </button>
         </div>
     </div>
-    
+
 </form>
 @*<button onclick="myfuncion()">js</button>*@
 
@@ -63,10 +65,11 @@ glyphicon glyphicon-erase"></span> LIMPIAR</button>
 {
     <h2 class="text-primary">Resultado</h2>
     <h3 class="text-success">@Model.resultado</h3>
+
 }
 else
 {
-
-    <h5 class="text-danger"><span class="glyphicon glyphicon-fire text-danger"></span> Nada Que mostrar!</h5>
+    <h3 class="text-danger">@Model.msnerror</h3>
+    <h4 class="text-warning"><span class="glyphicon glyphicon-fire text-warning"></span> Nada Que mostrar!</h4>
 }
 

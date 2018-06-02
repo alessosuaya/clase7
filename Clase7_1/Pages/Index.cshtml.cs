@@ -5,29 +5,47 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+
 namespace Clase7_1.Pages
 {
     public class IndexModel : PageModel
     {
 
         public double? resultado;
+        public string msnerror;
        
         public void OnGet(double numero1,string operacion, double numero2)
         {
            
             if (numero1 != 0 || numero2 != 0)
             {
-                
+
+
                 switch (operacion)
                 {
-                    case "suma": resultado=(numero1 + numero2); break;
-                    case "resta": resultado=(numero1 - numero2); break;
-                    case "multi": resultado=(numero1 * numero1); break;
-                    case "divi": resultado=(numero1 / numero2); break;
-                    case "pote": resultado =Math.Pow(numero1,numero2); break;
-                    case "expo":resultado = Math.Exp(numero1);break;
-                    case "radi": resultado = Math.Sqrt(numero1); break;
-                }
+
+
+                    case "suma": resultado = (numero1 + numero2); break;
+                    case "resta": resultado = (numero1 - numero2); break;
+                    case "multi": resultado = (numero1 * numero1); break;
+                    case "divi":
+                        if (numero2 != 0)
+                        {
+                            resultado = numero1 / numero2;
+
+                        }
+                        else
+                        {
+                            msnerror = "ERROR AL DIVIDIR POR CERO";
+                            resultado = null;
+                        };break;
+                        case "pote": resultado = Math.Pow(numero1, numero2); break;
+                        case "expo": resultado = Math.Exp(numero1); break;
+                        case "radi": resultado = Math.Sqrt(numero1); break;
+                    
+                    }
+                
+                
             }
 
         }
